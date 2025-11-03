@@ -1,14 +1,26 @@
-import { SignIn } from "../firebase/Auth"
+import { useEffect } from "react";
+import { onAuthStateChanged } from "firebase/auth";
+import { auth } from "../firebase/config";
+import { useNavigate } from "react-router-dom";
+import { SignIn } from "../firebase/Auth";
 
 const Login = () => {
+  const navigate = useNavigate();
 
-    return (
-        <div>
-            <button onClick={SignIn}>Login</button>
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        navigate("/home"); // redirect to home/dashboard
+      }
+    });
+    return () => unsubscribe();
+  }, [navigate]);
 
+  return (
+    <div>
+      <button onClick={SignIn}>Login</button>
+    </div>
+  );
+};
 
-        </div>
-    )
-}
-
-export default Login
+export default Login;

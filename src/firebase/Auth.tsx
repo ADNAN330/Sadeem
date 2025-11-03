@@ -1,10 +1,10 @@
 //As for this, it's to handle logging in with google
-import { signInWithRedirect, signOut } from "firebase/auth";
+import { signInWithPopup, signOut } from "firebase/auth";
 import { auth, provider} from "./config";
 
 const SignIn = async() => {
     try {
-    await signInWithRedirect(auth, provider);
+    await signInWithPopup(auth, provider);
     }
     catch (error) {
         console.error("Error signing in: ", error);
