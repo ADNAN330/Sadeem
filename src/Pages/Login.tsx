@@ -10,7 +10,7 @@ const Login = () => {
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
-        navigate("/home"); // redirect to home/dashboard
+        navigate("/"); 
       }
     });
     return () => unsubscribe();

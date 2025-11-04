@@ -1,20 +1,35 @@
 import { SignOut } from '../firebase/Auth.tsx'
 import CRUD from '../firebase/CRUD.tsx'
 import { useEffect, useState } from 'react'
+import { auth } from '../firebase/config.ts'
+
+import { useNavigate } from 'react-router-dom'
 
 function Home() {
-const [dataList, setDataList] = useState<any>(null)
-useEffect(()=>{
-  const fetchData = async() => {
-    const data = await CRUD.Read("users/adnan");
-    setDataList(JSON.stringify(data));
-  }
-fetchData();
+    const navigate = useNavigate();
+
+  const [user, setUser] = useState<any>();
+  const [dataList, setDataList] = useState<any>(null)
+  
+  useEffect(()=>{
+
+    const trackUser = auth.onAuthStateChanged((currentUser) => {
+         setUser(currentUser);
+    });
+
+
+    const fetchData = async() => {
+      const data = await CRUD.Read("users/adnan");
+      setDataList(JSON.stringify(data));
+    };
+    fetchData();
+        return () => trackUser();
 }, [dataList])
+
   return (
     <>
-     <h1>Hello Sadeem</h1>
-     <button onClick={() =>{CRUD.Create("users/adnan", {name: "Adnan"})}}>Create data</button>
+     <h1>Hello {user?.displayName}</h1>
+     <button onClick={() =>{navigate("/AddData")}}>Create data</button>
      <button onClick={() =>{CRUD.Update("users/adnan", {name: "Hal"})}}>Update data</button>
      <button onClick={() =>{CRUD.Delete("users/adnan")}}>Delete data</button>
      <button onClick={SignOut}>Log out</button>
