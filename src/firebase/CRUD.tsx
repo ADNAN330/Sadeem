@@ -1,6 +1,6 @@
 //I'll try my best here to make some functions to Create, Read, Update, And Delete, make it easy for my future.
-import{doc, setDoc, getDoc, updateDoc, deleteDoc} from "firebase/firestore"
-import { db } from "./config.ts";
+import{doc, setDoc, getDoc, updateDoc, deleteDoc, collection, getDocs} from "firebase/firestore"
+import {db} from "./config.ts";
 
 // 1 Create
 const Create = async(path:string, data:object) => {
@@ -23,11 +23,23 @@ const Delete = async(path:string) => {
     await deleteDoc(doc(db, ...path.split("/")));
 }
 
+const ReadAll = async (path: string) => {
+  const colRef = collection(db, ...path.split("/") as [string, string, ...string[]]);
+  const snapshot = await getDocs(colRef);
+  return snapshot.docs.map(doc => ({
+    id: doc.id,
+    data: doc.data(),
+  }));
+};
+
+
+
 const CRUD = {
   Create,
   Read,
   Update,
-  Delete
+  Delete,
+  ReadAll
 };
 
 export default CRUD;

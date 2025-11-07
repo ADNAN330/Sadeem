@@ -47,7 +47,9 @@ border-bottom: 2px solid black;
   flex-direction: column;
 }
 .dataCard{
-  height: 50px;
+  height: auto;
   width: 100%;
   border-bottom: 1px solid grey;
+  display: flex;
+
 }
