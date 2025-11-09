@@ -1,10 +1,12 @@
 //I'll try my best here to make some functions to Create, Read, Update, And Delete, make it easy for my future.
-import{doc, setDoc, getDoc, updateDoc, deleteDoc, collection, getDocs} from "firebase/firestore"
+import{doc, addDoc, getDoc, updateDoc, deleteDoc, collection, getDocs} from "firebase/firestore"
 import {db} from "./config.ts";
 
 // 1 Create
 const Create = async(path:string, data:object) => {
-    await setDoc(doc(db, ...path.split("/")), data);
+    await addDoc(collection(db, ...path.split("/") as [string, string, ...string[]]), data); 
+     //setDoc(doc(db, ...path.split("/")), data);
+
 }
 
 // 2 Read

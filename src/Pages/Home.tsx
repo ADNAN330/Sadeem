@@ -29,7 +29,7 @@ function Home() {
         const formatted = data.map((doc: any) => {
         const key = Object.keys(doc.data)[0];
         const value = doc.data[key];
-        return { field: key, value };
+        return {id: doc.id, field: key, value };
       });
       setDataList(formatted);
     }
@@ -55,7 +55,7 @@ function Home() {
       <div className="dataList">
 
      {dataList.map((item, i) => (
-       <DataCard key={i} field={item.field} value={item.value} />
+       <DataCard key={i} field={item.field} value={item.value} cardId={item.id} />
     ))}
       </div>
 

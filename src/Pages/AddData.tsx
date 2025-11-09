@@ -9,8 +9,8 @@ const AddData = () => {
    const [dataName, setDataName] = useState<string>("");
   const [text, setText] = useState<string>("");
   function AddDataBtn() {
-    const safeName = dataName.toLowerCase().replace(/[^a-z0-9_]/g, "");
-    CRUD.Create(`users/${userId}/data/${safeName}`, { [dataName]: text })
+   
+    CRUD.Create(`users/${userId}/data`, { [dataName]: text })
       console.log("Data Added");
       navigate("/");
   }
