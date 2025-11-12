@@ -11,7 +11,6 @@ const AddData = () => {
   function AddDataBtn() {
    
     CRUD.Create(`users/${userId}/data`, { [dataName]: text })
-      console.log("Data Added");
       navigate("/");
   }
  return <>

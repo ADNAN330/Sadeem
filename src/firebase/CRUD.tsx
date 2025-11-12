@@ -24,7 +24,7 @@ const Update = async(path:string, data:object) => {
 const Delete = async(path:string) => {
     await deleteDoc(doc(db, ...path.split("/")));
 }
-
+// 5 Read All
 const ReadAll = async (path: string) => {
   const colRef = collection(db, ...path.split("/") as [string, string, ...string[]]);
   const snapshot = await getDocs(colRef);
@@ -33,6 +33,7 @@ const ReadAll = async (path: string) => {
     data: doc.data(),
   }));
 };
+
 
 
 

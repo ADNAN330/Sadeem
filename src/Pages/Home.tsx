@@ -15,8 +15,8 @@ function Home() {
 
   const [user, setUser] = useState<any>();
   const [dataList, setDataList] = useState<any[]>([])
+
   
-  useEffect(()=>{
 
     const unsubscribe = auth.onAuthStateChanged((currentUser) => {
          setUser(currentUser);
@@ -34,7 +34,7 @@ function Home() {
       setDataList(formatted);
     }
   };
-
+  useEffect(()=>{
   fetchData();
 
   return () => unsubscribe();
@@ -55,7 +55,7 @@ function Home() {
       <div className="dataList">
 
      {dataList.map((item, i) => (
-       <DataCard key={i} field={item.field} value={item.value} cardId={item.id} />
+       <DataCard key={i} field={item.field} value={item.value} cardId={item.id} onDeleted={fetchData} />
     ))}
       </div>
 
@@ -65,3 +65,18 @@ function Home() {
 }
 
 export default Home
+
+
+
+/*
+Trash can
+ let f = (x:number) =>{
+
+    const result = (x^5-x) / (1+x^2);
+
+    console.log(result % 2 ? "Odd at x = " + x : "Even at x = " + x)
+    
+  }
+ for(let i = 0; i<100; i++)
+    f(i);
+*/ 
