@@ -44,13 +44,11 @@ function Home() {
     <>
      <h1>Hello {user?.displayName}</h1>
      <button onClick={() =>{navigate("/AddData")}}>Create data</button>
-     <button onClick={() =>{CRUD.Update(`users/${userId}/data`, {name: "Hal"})}}>Update data</button>
-     <button onClick={() =>{CRUD.Delete(`users/${userId}/data`)}}>Delete data</button>
      <button onClick={SignOut}>Log out</button>
      <div className='outer'>
       <div className="detailsDiv">
         <h3 className='name'>Name</h3>
-        <h3 className='type'>Type</h3>
+        <h3 className='date'>Date</h3>
       </div>
       <div className="dataList">
 

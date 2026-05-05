@@ -10,7 +10,7 @@ const AddData = () => {
   const [text, setText] = useState<string>("");
   function AddDataBtn() {
    
-    CRUD.Create(`users/${userId}/data`, { [dataName]: text })
+    CRUD.Create(`users/${userId}/data`, { [dataName]: text , "CreatedAt" : new Date().toLocaleTimeString()})
       navigate("/");
   }
  return <>
@@ -18,7 +18,7 @@ const AddData = () => {
  <h1>Add Data </h1>
 <input value={dataName} onChange={(e) => setDataName(e.target.value)} type="text" placeholder='Enter the name of the file' /><br />
  <input value={text} onChange={(e) => setText(e.target.value)} type="text" placeholder='Enter the data of the file' /><br />
- <button onClick={() => AddDataBtn()}>Something Important or that what it seems like</button>
+ <button onClick={() => AddDataBtn()}>Upload</button>
  </>
 }
 

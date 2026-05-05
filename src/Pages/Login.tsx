@@ -17,8 +17,16 @@ const Login = () => {
   }, [navigate]);
 
   return (
-    <div>
-      <button onClick={SignIn}>Login</button>
+    <div className="login_page">
+      <div className="login_body">
+      <div className="logo_and_name">
+        <div className="logo"><img src="src\inputs\StarsEmoji.png" alt="" /></div>
+        <div className="sadeem"><h1>Sadeem</h1></div>
+        <div className="login_button_container">
+      <button className="login_button" onClick={SignIn}>Login with google</button>
+      </div>
+      </div>
+      </div>
     </div>
   );
 };
