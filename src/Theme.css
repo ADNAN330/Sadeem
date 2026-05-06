@@ -40,37 +40,33 @@ body{
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
-.logo{
-  scale: 0.4;
-}
+
 .sadeem{
   scale: 1.5;
-  margin-bottom: 50px;
   position: relative;
   bottom: 40px;
   color: #ffffff;
 }
 .login_button_container{
-
-  position: relative;
-  bottom: 60px;
   display: flex;
   justify-content: center;
 }
 .login_button{
-  scale: 4.5;
+  scale: 3;
   cursor: pointer;
-  width: auto;
   background-color: #150045;
-  border: none;
+  border: 1px solid rgb(255, 255, 255);
+  font-weight: bold;
   border-radius: 5px;
   color: white;
-  font-size: xx-small;
+
   transition: all ease 0.4s;
 }
 .login_button:hover{
   background-color: #ffffff;
   color: #32009f;
+  border: 1px solid #32009f;
+
 }
 
 
