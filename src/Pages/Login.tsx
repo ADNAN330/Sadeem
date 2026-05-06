@@ -21,7 +21,7 @@ const Login = () => {
       <div className="login_bg_containter"><div className="login_bg">
 
       <div className="logo_and_name">
-        <div className="logo"><img src="src\inputs\StarsEmoji.png" alt="src\inputs\StarsEmoji.png" /></div>
+        <div className="logo"><img src="dist\assets\StarsEmoji-C-RoNedZ.png" alt="src\inputs\StarsEmoji.png" /></div>
         <div className="sadeem"><h1>Sadeem</h1></div>
         <div className="login_button_container">
       <button className="login_button" onClick={SignIn}>Login with google</button>

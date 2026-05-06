@@ -40,7 +40,10 @@ body{
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
-
+.logo{
+  height: 350px;
+  scale: 0.5;
+}
 .sadeem{
   scale: 1.5;
   position: relative;
