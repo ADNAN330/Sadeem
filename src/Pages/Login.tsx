@@ -18,6 +18,8 @@ const Login = () => {
 
   return (
     <div className="login_page">
+      <div className="login_bg_containter"><div className="login_bg">
+      </div></div>
       <div className="logo_and_name">
         <div className="logo"><img src="src\inputs\StarsEmoji.png" alt="" /></div>
         <div className="sadeem"><h1>Sadeem</h1></div>
