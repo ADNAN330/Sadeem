@@ -3,7 +3,7 @@ import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../firebase/config";
 import { useNavigate } from "react-router-dom";
 import { SignIn } from "../firebase/Auth";
-
+import logo from "/src/assets/Stars_Logo.png";
 const Login = () => {
   const navigate = useNavigate();
 
@@ -21,7 +21,7 @@ const Login = () => {
       <div className="login_bg_containter"><div className="login_bg">
 
       <div className="logo_and_name">
-        <div className="logo"><img src="dist\assets\StarsEmoji-C-RoNedZ.png" alt="src\inputs\StarsEmoji.png" /></div>
+        <div className="logo"><img src={logo} alt="Logo" /></div>
         <div className="sadeem"><h1>Sadeem</h1></div>
         <div className="login_button_container">
       <button className="login_button" onClick={SignIn}>Login with google</button>
