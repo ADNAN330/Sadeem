@@ -11,6 +11,11 @@ body{
   color: rgb(255, 255, 255);
 }
 
+:root{
+ --main-color : #4c00ff;
+ --secondary-color : #32009f;
+
+}
 .login_page{
   width: 100%;
   min-height: 100vh;
@@ -55,13 +60,16 @@ body{
   justify-content: center;
 }
 .login_button{
-  scale: 3;
+  height: 80px;
+  width: 300px;
+  padding: 10px;
   cursor: pointer;
   background-color: #150045;
-  border: 1px solid rgb(255, 255, 255);
+  border: 3px solid rgb(255, 255, 255);
   font-weight: bold;
-  border-radius: 5px;
+  border-radius: 15px;
   color: white;
+  font-size: 30px;
 
   transition: all ease 0.4s;
 }
@@ -76,30 +84,57 @@ body{
 
 
 
-
+.username{
+  margin-left: 20px;
+}
 .outer{
 display: flex;
 flex-direction: column;
 width: 100%;
-min-height: 90vh;
+min-height: 85vh;
 justify-content: flex-start;
 border: 2px solid rgb(255, 255, 255);
 border-radius: 30px;
 overflow-x: hidden;
+}
+.home_container{
+overflow: hidden;
+}
+.upper_tools{
+  scale: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: absolute;
+  right: 100px;
+  bottom: 100px;
+  width: 100px;
+  
+}
+.create_data_btn ,.logout{
+  transition: all ease 0.3s;
+  border: none;
+  color: white;
+  border-radius: 15px;
+  background-color: var(--main-color);
+  cursor: pointer;
+}
+.create_data_btn:hover ,.logout:hover{
+  background-color: white;
+  color: var(--main-color)
 }
 .detailsDiv{
 display: flex;
 justify-content: space-evenly;
 overflow: hidden;
 height: 60px;
-border-bottom: 2px solid rgb(255, 255, 255);
-color: #a896ff;
+border-bottom: 2px solid white;
+color: #ffffff;
 }
 .name{
-  margin-left: 15px;
   margin-top: 0px;
-  padding-top: 20px;
-  border-right: 2px solid rgb(255, 255, 255);
+  padding: 15px 0 0 15px;
+  border-right: 2px solid white;
   height: 100px;
   width: 85%;
 }
@@ -119,32 +154,31 @@ color: #a896ff;
 .dataCard{
   height: auto;
   width: 100%;
-  border-bottom: 1px solid rgb(255, 255, 255);
-  display: flex;
-  justify-content: space-evenly;
+  border-bottom: 1px solid white;
+  display: grid;
+  grid-template-columns: 0.3fr 1fr auto;
   overflow: hidden;
 }
 .card_name_div{
-  display: flex;
-  justify-content: start;
-  max-width: 40px;
-  padding-right: 50px;
-  border-right: 1px double rgb(255, 255, 255);
-  color: #a896ff;
-  font-size: medium;
+  padding: 0 0 0 15px;
+  border-right: 1px double white;
+
 }
 .card_details{
-  max-width: 40px;
+  font-size: medium;
+  border-right: 1px double white;
+  padding: 20px 0 0 15px;
+  margin: 0;
 }
-.card_functions{
-  height: 100%;
-  width: 10%;
-  justify-content: space-around;
-  display: flex;
-  flex-direction: column;
+.copy_btn{
+  transition: all ease 0.3s;
+  padding: 20px 10px 0 10px;
+  background-color: var(--main-color);
+  color: white;
+  cursor: pointer;
+  font-weight: bolder;
 }
-.func_buttons{
-border: none;
-background-color: #19192400;
-color: white;
+.copy_btn:hover{
+  background-color: white;
+  color: var(--main-color);
 }

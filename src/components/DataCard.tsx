@@ -20,15 +20,10 @@ const DataCard = ({ field, value, cardId, onDeleted }: { field: string; value: s
     
     return <div className={'dataCard'}>
    <div className="card_name_div"> 
-    <h3 className="card_name">{field}</h3>
+    <h3  onClick={() => handleDelete()} className="card_name">{field}</h3>
     </div>
-    <h3 className="card_details">{value}</h3>
-    <div className="card_functions">
-   <button className="func_buttons" onClick={() => handleDelete()}>Delete</button>
-   <button className="func_buttons" onClick={() => handleUpdate()}>Update</button>
-   <button className="func_buttons" onClick={() => handleCopy(value)}>Copy</button>
-   </div>
-   <div className="date_part">{new Date().toLocaleTimeString()}</div>
+    <h3 onClick={() => handleUpdate()} className="card_details">{value}</h3>
+   <div className="copy_btn" onClick={() => handleCopy(value)}>Copy</div>
     </div>
 }
 

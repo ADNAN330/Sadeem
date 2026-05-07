@@ -10,7 +10,7 @@ const AddData = () => {
   const [text, setText] = useState<string>("");
   function AddDataBtn() {
    
-    CRUD.Create(`users/${userId}/data`, { [dataName]: text , "CreatedAt" : new Date().toLocaleTimeString()})
+    CRUD.Create(`users/${userId}/data`, { [dataName]: text})
       navigate("/");
   }
  return <>

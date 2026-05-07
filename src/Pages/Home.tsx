@@ -42,9 +42,12 @@ function Home() {
 
   return (
     <>
-     <h1>Hello {user?.displayName}</h1>
-     <button onClick={() =>{navigate("/AddData")}}>Create data</button>
-     <button onClick={SignOut}>Log out</button>
+    <div className="home_container">
+     <h1 className='username'>Hello, {user?.displayName}</h1>
+     <div className="upper_tools">
+     <button className='create_data_btn' onClick={() =>{navigate("/AddData")}}>Create data</button>
+     <button className='logout' onClick={SignOut}>Log out</button>
+     </div>
      <div className='outer'>
       <div className="detailsDiv">
         <h3 className='name'>Name</h3>
@@ -54,9 +57,10 @@ function Home() {
 
      {dataList.map((item, i) => (
        <DataCard key={i} field={item.field} value={item.value} cardId={item.id} onDeleted={fetchData} />
-    ))}
+      ))}
       </div>
 
+      </div>
      </div>
     </>
   )

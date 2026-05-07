@@ -11,6 +11,7 @@ const UpdateData = () => {
     const [dataName, setDataName] = useState<string>('');
     const [dataDetails, setDataDetails] = useState<string>('');
 
+    
     const fetchCardByID = async (cardId : string) => {
         const User = auth.currentUser;
         if(!User) return;
